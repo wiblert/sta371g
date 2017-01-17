@@ -47,7 +47,7 @@
             \item Office hours: MW 5:00-6:00 PM in CBA 3.420
             \item Contact: \texttt{brian.lukoff@utexas.edu} or 415-652-8853
           \end{itemize}
-        \item TAs: Ryan O'Donnell and Will Schievelbein
+        \item TAs: Ryan O'Donnell, Will Schievelbein, and Hari Prakash
       \end{itemize}
     \end{frame}
 
@@ -295,9 +295,10 @@
       @
     \end{frame}
 
-    \begin{frame}{Five for the weekend}
+    \begin{frame}{Six for the weekend}
       \begin{enumerate}
         \item Read the syllabus
+        \item Install R and RStudio on your computer
         \item Make sure you can log in to Canvas
         \item Purchase (or see if you already have access to) Learning Catalytics
         \item Create a Perusall account
