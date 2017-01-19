@@ -319,7 +319,12 @@
 
 
 	\begin{frame}[label=lists]{Probability Distributions}
-		\framesubtitle{Graphs Go Here} 
+		\begin{figure} 
+			\centering
+			\scalebox{1}{ \includegraphics{unif_ex2.jpg} }
+			\setlength\fboxsep{0pt}
+			\setlength\fboxrule{0.5pt}
+		\end{figure} 
 
 
 				
@@ -430,13 +435,19 @@ mean(floor(runif(10, min=1, max=7)))
 
 
 
-	\begin{frame}[label=lists]{Normal Distribution}
+	\begin{frame}[label=lists]{Normal Distribution a.k.a. the Bell Curve}
 		%#\framesubtitle{R Exercise} 
-		A very common continuous probability distribution. Also known as the \alert{bell curve}.
+		A very common continuous probability distribution. 
+
+		The mean and variance together uniquely define the distribution: $N(\mu,\sigma^2)$		
 		
 		
-		The mean and variance uniquely defines the distribution: $N(\mu,\sigma^2)$		
-		The curve is symmetric around the mean.
+		\begin{figure} 
+			\centering
+			\scalebox{0.8}{ \includegraphics{normal.jpg} }
+			\setlength\fboxsep{0pt}
+			\setlength\fboxrule{0.5pt}
+		\end{figure}
 		
 		
    			
@@ -448,8 +459,17 @@ mean(floor(runif(10, min=1, max=7)))
 	
 	\begin{frame}[label=lists]{Central Limit Theorem}
 		%\framesubtitle{R Exercise} 
-		Add numbers
+		\begin{definition}
+			The average of large number of independent random variables will be approximately normally distributed.
+		\end{definition}		
 		
+		\begin{exampleblock}{Example}
+			$$
+				\text{a student's exam grade} = \frac{  \text{preparedness} + \text{focus} + \text{IQ} + \ldots  }{ \text{\# of factors}}
+			$$
+		\end{exampleblock}
+		
+		Distribution of the exam grades then tend to be normal...
 
    			
 	\end{frame}	
