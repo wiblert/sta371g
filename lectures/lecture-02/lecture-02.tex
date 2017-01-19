@@ -78,7 +78,7 @@
     \begin{frame}[label=lists]{Probability Theory}
       \framesubtitle{The Concept of Probability}
       
-      What is common among the following?
+      What is common among the following? \pause
       
       \begin{itemize}
       	\item Outcome of rolling a die
@@ -86,9 +86,9 @@
       	\item Number of iPhone 7s to be sold over the next year
       	\item Number of unique visitors to Amazon.com over the next week
       	\item Lifetime of your MacBook Air
-      \end{itemize}
+      \end{itemize} \pause
       
-      We cannot predict any of these with certainty. 
+      We cannot predict any of these with certainty.  \pause
       
       Yet, we can model them using \alert{probability theory} and study the values they might take, associated probabilities etc.
       
@@ -99,11 +99,11 @@
 		\framesubtitle{Definitions}    
 		\begin{definition}
        		A \alert{random variable} expresses the outcome of a \alert{random experiment} as a number. It is denoted by an uppercase letter.
-      	\end{definition} 	
+      	\end{definition} 	\pause
       	
       		\begin{itemize}
-      			\item Random experiment $\rightarrow$ Rolling a die
-      			\item Random variable $\rightarrow$ $X:$ The outcome when a die is rolled
+      			\item Random experiment $\rightarrow$ Rolling a die  \pause
+      			\item Random variable $\rightarrow$ $X:$ The outcome when a die is rolled  \pause
 				\item Random variable $\rightarrow$ $$ Y : \begin{cases}
         					1, \qquad \text{if outcome is odd number,}  \\
         					2, \qquad \text{if outcome is even number}  
@@ -122,16 +122,16 @@
 		\framesubtitle{Definitions}    
       	
       	\begin{definition}
-       		A \alert{discrete random variable} is a random variable with a finite (or countably infinite) range. 
+       		A \alert{discrete random variable} is a random variable with a finite (or countably infinite) range.  \pause
        		
        		A \alert{continuous random variable} is a random variable with an interval (either finite or infinite) of real numbers for its range.
-      	\end{definition}
+      	\end{definition} \pause
     
     
     	\begin{exampleblock}{Examples}
       		\begin{itemize}
 
-				\item $X:$ Number of stocks on NYSE whose price change today (discrete)
+				\item $X:$ Number of stocks on NYSE whose price change today (discrete) \pause
 				\item $Y:$ Average price change of the stocks on NYSE (continuous)
 
 			\end{itemize}
@@ -143,13 +143,13 @@
 	
    \begin{frame}[label=lists]{Probability Theory}
 		\framesubtitle{Exercise}    
-      	Discrete or continuous?
+      	Discrete or continuous?  \pause
       		\begin{itemize}
 				
-				\item Number of iPhone 7s to be sold over the next year
-				\item Lifetime of your MacBook Air
-				\item Number of unique visitors to Amazon.com over the next week
-      			\item S\&P500 index at the and of January % This could be interpreted both discrete or continuous
+				\item Number of iPhone 7s to be sold over the next year  \pause
+				\item Lifetime of your MacBook Air  \pause
+				\item Number of unique visitors to Amazon.com over the next week  \pause
+      			\item S\&P500 index at the and of January  % This could be interpreted both discrete or continuous
     
 			\end{itemize}
 	\end{frame} 
@@ -160,18 +160,18 @@
 		\framesubtitle{Definitions}    
 		
       	\begin{definition}
-       		\alert{Probability} is the measure of the likelihood that a particular outcome (or set of outcomes) will be observed. \newline
+       		\alert{Probability} is the measure of the likelihood that a particular outcome (or set of outcomes) will be observed. \newline \pause
        		
-       		Probability is a number always between 0 and 1. \newline
+       		Probability is a number always between 0 and 1. \newline \pause
        		
        		0 implies impossibility, 1 implies certainty.
-      	\end{definition}
+      	\end{definition} \pause
     
     
     	\begin{exampleblock}{Examples}
       		\begin{itemize}
 
-				\item $X:$ S\&P500 at the end of 2017, $P(X>2270) = 0.85$ % It was 1/18 price. We are optimistic about Trump
+				\item $X:$ S\&P500 at the end of 2017, $P(X>2270) = 0.85$  \pause % It was 1/18 price. We are optimistic about Trump
 				\item $Y:$ Lifetime of your MacBook, $ P(Y>15\text{ years})  = 0.05$
 
 			\end{itemize}
@@ -188,16 +188,16 @@
 	\begin{frame}[label=lists]{Probability Distributions}
 	%	\framesubtitle{How to express probabilities} 
 	
-		So, we have defined a random variable. How do we know what the probabilities are? \newline
+		So, we have defined a random variable. How do we know what the probabilities are? \newline \pause
 		
-		For example, what is the probability that your MacBook will break down after 5 years but before 7 years? That is, $P(5<X<7)=?$\newline
+		For example, what is the probability that your MacBook will break down after 5 years but before 7 years? That is, $P(5<X<7)=?$\newline \pause
   
 		
       	\begin{definition}
        		The \alert{probability distribution} of a random variable $X$ is a description of the probabilities associated with the possible values of $X$. 
-			\newline       		
+			\newline       \pause 		
        		
-       		Discrete random variable $\rightarrow$ Probability Mass Function (p.m.f.)
+       		Discrete random variable $\rightarrow$ Probability Mass Function (p.m.f.) \pause
        		
        		Continuous random variable $\rightarrow$ Probability Density Function (p.d.f.)
 
@@ -218,7 +218,7 @@
 		\framesubtitle{Discrete Random Variables} 
 	
 		\begin{exampleblock}{Example}
-			$X$: The outcome when you roll $n$-sided fair die.
+			$X$: The outcome when you roll $n$-sided fair die. \pause
 			
 			Since this is a fair die, the corresponding probability mass function:
 			
@@ -228,13 +228,13 @@
 				0 \qquad   \text{otherwise.}
 			\end{cases}
 			$$
-        \end{exampleblock}
+        \end{exampleblock} \pause
         
        
         \begin{itemize}
-        	\item $f(2)=P(X=2)$, which is the probability of observing a ``2.'' This interpretation will not hold for continuous random variables.
+        	\item $f(2)=P(X=2)$, which is the probability of observing a ``2.'' This interpretation will not hold for continuous random variables. \pause
         	
-        	\item Sum of probabilities is always 1. ($n \times \frac{1}{n}$). 
+        	\item Sum of probabilities is always 1. ($n \times \frac{1}{n}$).  \pause
     		
     		\item This is an example of \alert{Discrete Uniform Distribution}.    	
 	        	
@@ -251,18 +251,18 @@
 		\framesubtitle{Continous Random Variables} 
 	
 		\begin{exampleblock}{Example}
-		$Y:$ Lifetime of your MacBook (in years) \newline
+		$Y:$ Lifetime of your MacBook (in years) \newline \pause
 		
-		Let's assume $Y$ has a \alert{Continuous Uniform Distribution} with a maximum of 20 years. Its probability distribution is then given by the following probability density function: \newline
+		Let's assume $Y$ has a \alert{Continuous Uniform Distribution} with a maximum of 20 years. Its probability distribution is then given by the following probability density function: \newline  \pause
 		
 		$$ f(y) = 
 			\begin{cases}
 				\frac{1}{20} \qquad 0 \leq y \leq 20, \\
 				0 \qquad   \text{otherwise.}
 			\end{cases}
-		$$
+		$$  \pause
 		
-		What is $P(Y=5)=?$ or $P(Y=5.5)=?$ or $P(Y=5.551234123)=?$ \newline
+		What is $P(Y=5)=?$ or $P(Y=5.5)=?$ or $P(Y=5.551234123)=?$ \newline  \pause
 		They are all 0.
 		
 		
@@ -278,11 +278,11 @@
 		\framesubtitle{Continous Random Variables} 
 	
 		\begin{alertblock}{Warning!}
-        For a continuous random variable, $P(Y=a)$ is always zero, regardless of $a$. \newline
-      \end{alertblock} 
+        For a continuous random variable, $P(Y=a)$ is always zero, regardless of $a$. \newline 
+      \end{alertblock}  \pause
        %\quad \newline
       
-      For this reason, for continuous random variables we ask questions like ``$P(a \leq Y \leq b)=?$'' \newline
+      For this reason, for continuous random variables we ask questions like ``$P(a \leq Y \leq b)=?$'' \newline \pause
       
       And we take integrals to find such probabilities.
 			
@@ -293,20 +293,20 @@
 		\framesubtitle{Continous Random Variables} 
 
 		\begin{exampleblock}{Example}
-		$Y:$ Lifetime of your MacBook (in years) \newline
+		$Y:$ Lifetime of your MacBook (in years) \newline \pause
 		
 		$$ f(y) = 
 			\begin{cases}
 				\frac{1}{20} \qquad 0 \leq y \leq 20, \\
 				0 \qquad   \text{otherwise.}
 			\end{cases}
-		$$
+		$$  \pause
 		
-		What is $P(5<Y<7)=?$ 
+		What is $P(5<Y<7)=?$   \pause
 		
 		$$
 			P(5<Y<7) = \int_5^7 \frac{1}{20} dy = \frac{y}{20} |_5^7 = \frac{7}{20} - \frac{5}{20} =  \frac{1}{10}
-		$$
+		$$  \pause
 		
 		
 		\end{exampleblock}
@@ -337,16 +337,16 @@
 		
 		\begin{definition}
 			\alert{Mean} or \alert{Expected Value} of a random variable $X$ is a measure of the center of its probability distribution. It is a weighted average of all possible values $X$ can take, where the weights are the corresponding probabilities. 
-		\end{definition}
+		\end{definition} \pause
 		
 		\begin{columns}[onlytextwidth]
         \column{.5\textwidth}
         	Discrete random variable $X$
         	$$
 				\mu_X = E[X] = \sum_x x f(x)	        	
-        	$$
+        	$$  
         	
-        \column{.5\textwidth}
+        \column{.5\textwidth} 
         	Continuous random variable $Y$
         	$$
 				\mu_Y = E[Y] = \int_y y f(y) dy	        	
@@ -367,12 +367,12 @@
 		
 		\begin{definition}
 			\alert{Variance} of a random variable $X$ is a measure of the dispersion, or variability in its distribution. \alert{Standard Deviation} of $X$ is the square root of its variance.
-		\end{definition}
+		\end{definition}  \pause
 		
         	Discrete random variable $X$
         	$$
 				\sigma^2_X = Var(X) = E[(X-\mu_X)^2] = \sum_x (x-\mu_x)^2 f(x)	        	
-        	$$
+        	$$   \pause
         	
         	Continuous random variable $Y$
         	$$
@@ -390,13 +390,15 @@
 		
 		\begin{definition}
 			For a random variable $X$, the average of $X_1, X_2,\ldots,X_n$ gets very close to the expected value of $X$ ($E[X]$) for large $n$.
-		\end{definition}
+		\end{definition}  \pause
+		
+		
 		\begin{exampleblock}{Example}
 			A die is rolled $n=4$ times: $x_1=4, x_2=6, x_3=1, x_4=1$. The average is
 			$$
 				\frac{x_1 + x_2 + x_3 + x_4}{4} = \frac{4+6+1+1}{4}=3
 			$$
-		\end{exampleblock}
+		\end{exampleblock}  \pause
 		
 		For large $n$, the average will be around 3.5; because $E[X]=3.5$.
    			
@@ -439,7 +441,7 @@ mean(floor(runif(10, min=1, max=7)))
 		%#\framesubtitle{R Exercise} 
 		A very common continuous probability distribution. 
 
-		The mean and variance together uniquely define the distribution: $N(\mu,\sigma^2)$		
+		The mean and variance together uniquely define the distribution: $N(\mu,\sigma^2)$		 \pause
 		
 		
 		\begin{figure} 
@@ -461,13 +463,13 @@ mean(floor(runif(10, min=1, max=7)))
 		%\framesubtitle{R Exercise} 
 		\begin{definition}
 			The average of large number of independent random variables will be approximately normally distributed.
-		\end{definition}		
+		\end{definition}		 \pause
 		
 		\begin{exampleblock}{Example}
 			$$
 				\text{a student's exam grade} = \frac{  \text{preparedness} + \text{focus} + \text{IQ} + \ldots  }{ \text{\# of factors}}
 			$$
-		\end{exampleblock}
+		\end{exampleblock} \pause
 		
 		Distribution of the exam grades then tend to be normal...
 
@@ -495,11 +497,11 @@ hist(avg_house_prices)
 	
 	\begin{frame}[label=lists]{Central Limit Theorem}
 		\framesubtitle{R Exercise} 
-		 $X$ : The price of a house. Assume $X$ is uniform in $[100,400]$ (\$K).
+		 $X$ : The price of a house. Assume $X$ is uniform in $[100,400]$ (\$K).  \pause
 		 
-		 $Y$ : Average house price in a zip code
+		 $Y$ : Average house price in a zip code  \pause
 		 
-		 We will simulate $z$ number of zip codes, each containing $n$ houses.		 	
+		 We will simulate $z$ number of zip codes, each containing $n$ houses.	\pause 	
 		
 		
 		\housePrices
