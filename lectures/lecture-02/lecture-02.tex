@@ -1,0 +1,453 @@
+\documentclass{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{../371g-slides}
+% Uncomment these lines to print notes pages
+% \pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm,landscape]
+% \setbeameroption{show only notes}
+\title{Introduction to predictive analytics}
+\subtitle{Lecture 1}
+\author{STA 371G}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+  
+  
+
+  \frame{\maketitle}
+
+  % Show outline at beginning of each section
+  \AtBeginSection[]{ 
+    \begin{frame}<beamer>
+      \tableofcontents[currentsection]
+    \end{frame}
+  }
+
+  %%%%%%% Slides start here %%%%%%%
+
+   \begin{darkframes}
+  
+
+    \begin{frame}[label=lists]{Probability Theory}
+      \framesubtitle{The Concept of Probability}
+      
+      What is common among the following?
+      
+      \begin{itemize}
+      	\item Outcome of rolling a die
+      	\item S\&P500 index at the and of January
+      	\item Number of iPhone 7s to be sold over the next year
+      	\item Number of unique visitors to Amazon.com over the next week
+      	\item Lifetime of your MacBook Air
+      \end{itemize}
+      
+      We cannot predict any of these with certainty. 
+      
+      
+      
+      
+    \end{frame}
+    
+    
+    \begin{frame}[label=lists]{Probability Theory}
+      \framesubtitle{The Concept of Probability}
+      
+	 	Many processes in life involve randomness and the outcome is uncertain. These processes are either 
+	 	
+	 	\begin{itemize}
+      	\item inherently random (e.g. ones that involve human behavior), or
+      	\item the underlying dynamics are so complex to take into account so we treat them as random (e.g. tossing a coin), or
+      	\item both (e.g. stock market).
+      	\end{itemize}
+	 	
+	 	
+      	Although we cannot predict with certainty, in many cases, we could assess the likelihoods of the possible outcomes of a process.  	
+      	This is what the \alert{probability theory} is about.
+      
+    \end{frame}     
+    
+
+	
+	\begin{frame}[label=lists]{Probability Theory}
+		\framesubtitle{Definitions}
+
+	   	\begin{definition}
+        An experiment that can result in different outcomes, even though it is repeated in the same manner every time, is called a \alert{random experiment}.
+      	\end{definition} 	
+      	
+      	\begin{exampleblock}{Examples}
+      		\begin{itemize}
+        		\item Rolling a six-sided fair die
+        		\item Selling iPhone 7s over a year
+	       		\item Buying and using a MacBook Air until it breaks down
+        	\end{itemize}
+        \end{exampleblock}
+
+    \end{frame}
+    
+    
+
+    \begin{frame}[label=lists]{Probability Theory}
+		\framesubtitle{Definitions}    
+		\begin{definition}
+       		A \alert{random variable} expresses the outcome of a random experiment as a number. It is denoted by an uppercase letter.
+      	\end{definition} 	
+      	
+      	\begin{exampleblock}{Examples (cont'd)}
+      		\begin{itemize}
+        		\item $X:$ Number of pips on the upper side of the die
+        		\item $Y:$ Number of iPhone 7s to be sold over a year 
+	       		\item $Z:$ Lifetime of your MacBook Air
+        	\end{itemize}
+        \end{exampleblock}		
+	
+	When a random variable is realized (i.e. the result is observed), its value is denoted by a lowercase letter. E.g. $x=6$, $y=52316673$ etc. 	
+				
+    \end{frame}
+    
+    
+	\begin{frame}[label=lists]{Probability Theory}
+		\framesubtitle{Definitions}    
+		Multiple random variables can be defined for the same random experiment!		
+      	
+      	
+      	\begin{exampleblock}{Examples (cont'd)}
+      		
+        		$$ X_2 : \begin{cases}
+        					1, \qquad \text{if there are odd number of pips on the upper side,}  \\
+        					2, \qquad \text{if there are even number of pips on the upper side.}  
+        		            \end{cases}
+        		      $$ 
+        		
+        		$$ Y_2 : \begin{cases}
+        					1, \qquad \text{ if iPhone 7 sales exceed 100M over the next year,}  \\
+        					0, \qquad \text{otherwise.}  
+        		            \end{cases}
+        		      $$      
+        		            
+        	
+        \end{exampleblock}		
+		
+		
+    \end{frame}    
+    
+    
+    
+%	\begin{frame}[label=lists]{Probability Theory}
+%		\framesubtitle{Definitions}
+
+%	   	\begin{definition}
+%       The set of all possible outcomes of a random experiment is called the \alert{sample space} of the experiment. The sample space is denoted as $S$.
+%      	\end{definition} 	
+      	
+%      	\begin{exampleblock}{Examples (cont'd)}
+%      		\begin{itemize}
+%        		\item (Rolling a die) $ S = \{ 1,2,3,4,5,6 \}$
+%        		\item (iPhone sales) $ S =  \{ 0, 1,2,\ldots, 7B \}$ (assume at most one iPhone 7 per person)
+%	       		\item (MacBook Lifetime) $ S = [0,\infty) $
+%        	\end{itemize}
+%        \end{exampleblock}
+
+%    \end{frame}    
+    
+
+    \begin{frame}[label=lists]{Probability Theory}
+		\framesubtitle{Definitions}    
+		Notice that some random variables can take only discrete values whereas others can take continuous values!  	
+      	
+      	\begin{definition}
+       		A \alert{discrete random variable} is a random variable with a finite (or countably infinite) range. 
+       		
+       		A \alert{continuous random variable} is a random variable with an interval (either finite or infinite) of real numbers for its range.
+      	\end{definition}
+    
+    
+    	\begin{exampleblock}{Examples (cont'd)}
+      		\begin{itemize}
+
+				\item (iPhone sales) $ Y \in  \{ 0, 1,2,\ldots \}$ 
+				\item (MacBook Lifetime) $ Z \in [0,\infty) $
+
+			\end{itemize}
+        \end{exampleblock}
+  
+	\end{frame}  
+	
+	
+	
+	
+	\begin{frame}[label=lists]{Probability Theory}
+		\framesubtitle{Definitions}    
+		
+      	\begin{definition}
+       		\alert{Probability} is the measure of the likelihood that a particular outcome (or set of outcomes) will be observed. \newline
+       		
+       		Probability is a number that is always between 0 and 1, where 0 implies impossibility and 1 implies certainty.
+      	\end{definition}
+    
+    
+    	\begin{exampleblock}{Examples (cont'd)}
+      		\begin{itemize}
+
+				\item (Rolling a die) $ P(X=5) = \frac{1}{6} $ 
+				\item (MacBook Lifetime) $ P(Z>15\text{ years})  = 0.05$
+
+			\end{itemize}
+        \end{exampleblock}
+  
+	\end{frame}  	
+	
+	
+  
+  
+  
+  
+  
+	\begin{frame}[label=lists]{Probability Distributions}
+	%	\framesubtitle{How to express probabilities} 
+	
+		So, we have defined our random variable. How do we know what the probabilities are? \newline
+		
+		For example, what is the probability that your MacBook will break down after 5 years but before 7 years? That is, $P(5<Y<7)=?$\newline
+  
+		
+      	\begin{definition}
+       		The \alert{probability distribution} of a random variable $Y$ is a description of the probabilities associated with the possible values of $Y$. 
+			\newline       		
+       		
+       		Discrete random variable $\rightarrow$ Probability Mass Function (p.m.f.)
+       		
+       		Continuous random variable $\rightarrow$ Probability Density Function (p.d.f.)
+
+      	\end{definition}
+    
+    
+		
+  
+	\end{frame}  	
+	  
+  
+  
+
+
+
+
+	\begin{frame}[label=lists]{Probability Distributions}
+		\framesubtitle{Discrete Random Variables} 
+	
+		\begin{exampleblock}{Example}
+			$X$: The outcome when you roll $n$-sided fair die.
+			
+			Since this is a fair die, the probability distribution is given by the following probability mass function:
+			
+			$$ f(x) = 
+			\begin{cases}
+				\frac{1}{n} \qquad x= 1,\ldots,n, \\
+				0 \qquad   \text{otherwise.}
+			\end{cases}
+			$$
+        \end{exampleblock}
+        
+       
+        \begin{itemize}
+        	\item $f(2)=P(X=2)$, which is the probability of observing a ``2.'' This interpretation will hold for continuous random variables.
+        	
+        	\item If you add up all the probabilities, you should get 1. ($n \times \frac{1}{n}$). 
+    		
+    		\item This is an example of \alert{Discrete Uniform Distribution}.    	
+	        	
+        \end{itemize} 
+	\end{frame}
+
+
+
+
+
+
+
+	\begin{frame}[label=lists]{Probability Distributions}
+		\framesubtitle{Continous Random Variables} 
+	
+		\begin{exampleblock}{Example}
+		$Y:$ Lifetime of your MacBook (in years) \newline
+		
+		Let's assume $Y$ has a \alert{Continuous Uniform Distribution} with a maximum of 20 years. Its probability distribution is then given by the following probability density function: \newline
+		
+		$$ f(y) = 
+			\begin{cases}
+				\frac{1}{20} \qquad 0 \leq y \leq 20, \\
+				0 \qquad   \text{otherwise.}
+			\end{cases}
+		$$
+		
+		What is $P(Y=5)=?$ or $P(Y=5.5)=?$ or $P(Y=5.551234123)=?$ \newline
+		They are all 0.
+		
+		
+		\end{exampleblock}
+			
+	\end{frame}
+
+
+
+
+
+	\begin{frame}[label=lists]{Probability Distributions}
+		\framesubtitle{Continous Random Variables} 
+	
+		\begin{alertblock}{Warning!}
+        For a continuous random variable, $P(Y=a)$ is always zero, regardless of $a$. Because $Y$ can take infinite number of values and the chance of particularly hitting one of those points ($a$) is zero! (although it will eventually take a value. Sounds like a paradox, right?)
+      \end{alertblock} 
+       \quad \newline
+      
+      For this reason, for continuous random variables we ask questions like ``$P(a \leq Y \leq b)=?$'' \newline
+      
+      And we take integrals to find such probabilities.
+			
+	\end{frame}
+
+
+	\begin{frame}[label=lists]{Probability Distributions}
+		\framesubtitle{Continous Random Variables} 
+
+		\begin{exampleblock}{Example}
+		$Y:$ Lifetime of your MacBook (in years) \newline
+		
+		$$ f(y) = 
+			\begin{cases}
+				\frac{1}{20} \qquad 0 \leq y \leq 20, \\
+				0 \qquad   \text{otherwise.}
+			\end{cases}
+		$$
+		
+		What is $P(5<Y<7)=?$ 
+		
+		$$
+			P(5<Y<7) = \int_5^7 \frac{1}{20} dy = \frac{y}{20} |_5^7 = \frac{7}{20} - \frac{5}{20} =  \frac{1}{10}
+		$$
+		
+		
+		\end{exampleblock}
+		
+		In general, \alert{$P(a \leq Y \leq b) = \int_a^b f(y)dy$}.
+				
+	\end{frame}
+
+
+
+
+	\begin{frame}[label=lists]{Probability Distributions}
+		\framesubtitle{Graphs Go Here} 
+
+
+				
+	\end{frame}
+	
+	
+	
+	\begin{frame}[label=lists]{Mean, Variance and Standard Deviation}
+		%\framesubtitle{Mean (Expected Value) of a Random Variable} 
+		
+		\begin{definition}
+			\alert{Mean} or \alert{Expected Value} of a random variable $X$ is a measure of the center of its probability distribution. It is a weighted average of all possible values $X$ can take, where the weights are the corresponding probabilities. 
+		\end{definition}
+		
+		\begin{columns}[onlytextwidth]
+        \column{.5\textwidth}
+        	Discrete random variable $X$
+        	$$
+				\mu_X = E[X] = \sum_x x f(x)	        	
+        	$$
+        	
+        \column{.5\textwidth}
+        	Continuous random variable $Y$
+        	$$
+				\mu_Y = E[Y] = \int_y y f(y) dy	        	
+        	$$
+        	        
+        \end{columns}
+
+
+				
+	\end{frame}
+
+
+
+
+
+	\begin{frame}[label=lists]{Mean, Variance and Standard Deviation}
+		%\framesubtitle{Mean (Expected Value) of a Random Variable} 
+		
+		\begin{definition}
+			\alert{Variance} of a random variable $X$ is a measure of the dispersion, or variability in its distribution. \alert{Standard Deviation} of $X$ is the square root of its variance.
+		\end{definition}
+		
+        	Discrete random variable $X$
+        	$$
+				\sigma^2_X = Var(X) = E[(X-\mu_X)^2] = \sum_x (x-\mu_x)^2 f(x)	        	
+        	$$
+        	
+        	Continuous random variable $Y$
+        	$$
+				\sigma^2_Y = Var(Y) = E[(Y-\mu_Y)^2] = \int_y (y-\mu_y)^2 f(y)dy	        	
+        	$$
+   			
+	\end{frame}
+
+
+
+
+\end{darkframes}
+  
+  
+  
+
+\end{document}
+
