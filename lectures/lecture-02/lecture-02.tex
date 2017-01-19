@@ -53,8 +53,8 @@
 % Uncomment these lines to print notes pages
 % \pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm,landscape]
 % \setbeameroption{show only notes}
-\title{Introduction to predictive analytics}
-\subtitle{Lecture 1}
+\title{Probability Review 1}
+\subtitle{Lecture 2}
 \author{STA 371G}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
@@ -90,117 +90,36 @@
       
       We cannot predict any of these with certainty. 
       
+      Yet, we can model them using \alert{probability theory} and study the values they might take, associated probabilities etc.
       
-      
-      
-    \end{frame}
-    
-    
-    \begin{frame}[label=lists]{Probability Theory}
-      \framesubtitle{The Concept of Probability}
-      
-	 	Many processes in life involve randomness and the outcome is uncertain. These processes are either 
-	 	
-	 	\begin{itemize}
-      	\item inherently random (e.g. ones that involve human behavior), or
-      	\item the underlying dynamics are so complex to take into account so we treat them as random (e.g. tossing a coin), or
-      	\item both (e.g. stock market).
-      	\end{itemize}
-	 	
-	 	
-      	Although we cannot predict with certainty, in many cases, we could assess the likelihoods of the possible outcomes of a process.  	
-      	This is what the \alert{probability theory} is about.
-      
-    \end{frame}     
-    
+     \end{frame}    
 
-	
-	\begin{frame}[label=lists]{Probability Theory}
-		\framesubtitle{Definitions}
-
-	   	\begin{definition}
-        An experiment that can result in different outcomes, even though it is repeated in the same manner every time, is called a \alert{random experiment}.
-      	\end{definition} 	
-      	
-      	\begin{exampleblock}{Examples}
-      		\begin{itemize}
-        		\item Rolling a six-sided fair die
-        		\item Selling iPhone 7s over a year
-	       		\item Buying and using a MacBook Air until it breaks down
-        	\end{itemize}
-        \end{exampleblock}
-
-    \end{frame}
-    
-    
 
     \begin{frame}[label=lists]{Probability Theory}
 		\framesubtitle{Definitions}    
 		\begin{definition}
-       		A \alert{random variable} expresses the outcome of a random experiment as a number. It is denoted by an uppercase letter.
+       		A \alert{random variable} expresses the outcome of a \alert{random experiment} as a number. It is denoted by an uppercase letter.
       	\end{definition} 	
       	
-      	\begin{exampleblock}{Examples (cont'd)}
       		\begin{itemize}
-        		\item $X:$ Number of pips on the upper side of the die
-        		\item $Y:$ Number of iPhone 7s to be sold over a year 
-	       		\item $Z:$ Lifetime of your MacBook Air
-        	\end{itemize}
-        \end{exampleblock}		
+      			\item Random experiment $\rightarrow$ Rolling a die
+      			\item Random variable $\rightarrow$ $X:$ The outcome when a die is rolled
+				\item Random variable $\rightarrow$ $$ Y : \begin{cases}
+        					1, \qquad \text{if outcome is odd number,}  \\
+        					2, \qquad \text{if outcome is even number}  
+        		            \end{cases}
+        		      $$ 
+        	\end{itemize}	
 	
-	When a random variable is realized (i.e. the result is observed), its value is denoted by a lowercase letter. E.g. $x=6$, $y=52316673$ etc. 	
+	%Use lowercase letter to denote a particular realization of a random variable, e.g., $x=6$.
 				
     \end{frame}
     
-    
-	\begin{frame}[label=lists]{Probability Theory}
-		\framesubtitle{Definitions}    
-		Multiple random variables can be defined for the same random experiment!		
-      	
-      	
-      	\begin{exampleblock}{Examples (cont'd)}
-      		
-        		$$ X_2 : \begin{cases}
-        					1, \qquad \text{if there are odd number of pips on the upper side,}  \\
-        					2, \qquad \text{if there are even number of pips on the upper side.}  
-        		            \end{cases}
-        		      $$ 
-        		
-        		$$ Y_2 : \begin{cases}
-        					1, \qquad \text{ if iPhone 7 sales exceed 100M over the next year,}  \\
-        					0, \qquad \text{otherwise.}  
-        		            \end{cases}
-        		      $$      
-        		            
-        	
-        \end{exampleblock}		
-		
-		
-    \end{frame}    
-    
-    
-    
-%	\begin{frame}[label=lists]{Probability Theory}
-%		\framesubtitle{Definitions}
-
-%	   	\begin{definition}
-%       The set of all possible outcomes of a random experiment is called the \alert{sample space} of the experiment. The sample space is denoted as $S$.
-%      	\end{definition} 	
-      	
-%      	\begin{exampleblock}{Examples (cont'd)}
-%      		\begin{itemize}
-%        		\item (Rolling a die) $ S = \{ 1,2,3,4,5,6 \}$
-%        		\item (iPhone sales) $ S =  \{ 0, 1,2,\ldots, 7B \}$ (assume at most one iPhone 7 per person)
-%	       		\item (MacBook Lifetime) $ S = [0,\infty) $
-%        	\end{itemize}
-%        \end{exampleblock}
-
-%    \end{frame}    
+       
     
 
     \begin{frame}[label=lists]{Probability Theory}
 		\framesubtitle{Definitions}    
-		Notice that some random variables can take only discrete values whereas others can take continuous values!  	
       	
       	\begin{definition}
        		A \alert{discrete random variable} is a random variable with a finite (or countably infinite) range. 
@@ -209,17 +128,31 @@
       	\end{definition}
     
     
-    	\begin{exampleblock}{Examples (cont'd)}
+    	\begin{exampleblock}{Examples}
       		\begin{itemize}
 
-				\item (iPhone sales) $ Y \in  \{ 0, 1,2,\ldots \}$ 
-				\item (MacBook Lifetime) $ Z \in [0,\infty) $
+				\item $X:$ Number of stocks on NYSE whose price change today (discrete)
+				\item $Y:$ Average price change of the stocks on NYSE (continuous)
 
 			\end{itemize}
         \end{exampleblock}
   
 	\end{frame}  
 	
+	
+	
+   \begin{frame}[label=lists]{Probability Theory}
+		\framesubtitle{Exercise}    
+      	Discrete or continuous?
+      		\begin{itemize}
+				
+				\item Number of iPhone 7s to be sold over the next year
+				\item Lifetime of your MacBook Air
+				\item Number of unique visitors to Amazon.com over the next week
+      			\item S\&P500 index at the and of January % This could be interpreted both discrete or continuous
+    
+			\end{itemize}
+	\end{frame} 
 	
 	
 	
@@ -229,15 +162,17 @@
       	\begin{definition}
        		\alert{Probability} is the measure of the likelihood that a particular outcome (or set of outcomes) will be observed. \newline
        		
-       		Probability is a number that is always between 0 and 1, where 0 implies impossibility and 1 implies certainty.
+       		Probability is a number always between 0 and 1. \newline
+       		
+       		0 implies impossibility, 1 implies certainty.
       	\end{definition}
     
     
-    	\begin{exampleblock}{Examples (cont'd)}
+    	\begin{exampleblock}{Examples}
       		\begin{itemize}
 
-				\item (Rolling a die) $ P(X=5) = \frac{1}{6} $ 
-				\item (MacBook Lifetime) $ P(Z>15\text{ years})  = 0.05$
+				\item $X:$ S\&P500 at the end of 2017, $P(X>2270) = 0.85$ % It was 1/18 price. We are optimistic about Trump
+				\item $Y:$ Lifetime of your MacBook, $ P(Y>15\text{ years})  = 0.05$
 
 			\end{itemize}
         \end{exampleblock}
@@ -253,13 +188,13 @@
 	\begin{frame}[label=lists]{Probability Distributions}
 	%	\framesubtitle{How to express probabilities} 
 	
-		So, we have defined our random variable. How do we know what the probabilities are? \newline
+		So, we have defined a random variable. How do we know what the probabilities are? \newline
 		
-		For example, what is the probability that your MacBook will break down after 5 years but before 7 years? That is, $P(5<Y<7)=?$\newline
+		For example, what is the probability that your MacBook will break down after 5 years but before 7 years? That is, $P(5<X<7)=?$\newline
   
 		
       	\begin{definition}
-       		The \alert{probability distribution} of a random variable $Y$ is a description of the probabilities associated with the possible values of $Y$. 
+       		The \alert{probability distribution} of a random variable $X$ is a description of the probabilities associated with the possible values of $X$. 
 			\newline       		
        		
        		Discrete random variable $\rightarrow$ Probability Mass Function (p.m.f.)
@@ -285,7 +220,7 @@
 		\begin{exampleblock}{Example}
 			$X$: The outcome when you roll $n$-sided fair die.
 			
-			Since this is a fair die, the probability distribution is given by the following probability mass function:
+			Since this is a fair die, the corresponding probability mass function:
 			
 			$$ f(x) = 
 			\begin{cases}
@@ -297,9 +232,9 @@
         
        
         \begin{itemize}
-        	\item $f(2)=P(X=2)$, which is the probability of observing a ``2.'' This interpretation will hold for continuous random variables.
+        	\item $f(2)=P(X=2)$, which is the probability of observing a ``2.'' This interpretation will not hold for continuous random variables.
         	
-        	\item If you add up all the probabilities, you should get 1. ($n \times \frac{1}{n}$). 
+        	\item Sum of probabilities is always 1. ($n \times \frac{1}{n}$). 
     		
     		\item This is an example of \alert{Discrete Uniform Distribution}.    	
 	        	
@@ -343,9 +278,9 @@
 		\framesubtitle{Continous Random Variables} 
 	
 		\begin{alertblock}{Warning!}
-        For a continuous random variable, $P(Y=a)$ is always zero, regardless of $a$. Because $Y$ can take infinite number of values and the chance of particularly hitting one of those points ($a$) is zero! (although it will eventually take a value. Sounds like a paradox, right?)
+        For a continuous random variable, $P(Y=a)$ is always zero, regardless of $a$. \newline
       \end{alertblock} 
-       \quad \newline
+       %\quad \newline
       
       For this reason, for continuous random variables we ask questions like ``$P(a \leq Y \leq b)=?$'' \newline
       
@@ -440,6 +375,122 @@
         	$$
    			
 	\end{frame}
+
+
+
+
+
+	\begin{frame}[label=lists]{Law of Large Numbers}
+		%\framesubtitle{Mean (Expected Value) of a Random Variable} 
+		
+		\begin{definition}
+			For a random variable $X$, the average of $X_1, X_2,\ldots,X_n$ gets very close to the expected value of $X$ ($E[X]$) for large $n$.
+		\end{definition}
+		\begin{exampleblock}{Example}
+			A die is rolled $n=4$ times: $x_1=4, x_2=6, x_3=1, x_4=1$. The average is
+			$$
+				\frac{x_1 + x_2 + x_3 + x_4}{4} = \frac{4+6+1+1}{4}=3
+			$$
+		\end{exampleblock}
+		
+		For large $n$, the average will be around 3.5; because $E[X]=3.5$.
+   			
+	\end{frame}
+	
+	
+	 
+	
+	
+	
+	\defverbatim[colored]\rollRie{
+      \begin{lstlisting}[language=R,tabsize=2]
+# Generate a random number in [0,1]
+runif(1) 
+# Generate a random number in [1,7]
+runif(1, min=1, max=7)
+# Floor it down to simulate a die
+floor(runif(1, min=1, max=7))
+# Simulate 3 dice
+floor(runif(3, min=1, max=7))
+# Take the average	
+mean(floor(runif(3, min=1, max=7)))
+# Let's increase the number of dice
+mean(floor(runif(10, min=1, max=7)))
+
+    \end{lstlisting}}	
+	
+	\begin{frame}[label=lists]{Law of Large Numbers}
+		\framesubtitle{R Exercise} 
+		Go to R Studio...
+		
+		\rollRie
+   			
+	\end{frame}
+
+
+
+
+	\begin{frame}[label=lists]{Normal Distribution}
+		%#\framesubtitle{R Exercise} 
+		A very common continuous probability distribution. Also known as the \alert{bell curve}.
+		
+		
+		The mean and variance uniquely defines the distribution: $N(\mu,\sigma^2)$		
+		The curve is symmetric around the mean.
+		
+		
+   			
+	\end{frame}
+	
+	
+	
+	
+	
+	\begin{frame}[label=lists]{Central Limit Theorem}
+		%\framesubtitle{R Exercise} 
+		Add numbers
+		
+
+   			
+	\end{frame}	
+	
+	
+	
+	
+	
+	
+	
+	\defverbatim[colored]\housePrices{
+      \begin{lstlisting}[language=R,tabsize=2]
+# Simulating a zip code with 3 houses
+runif(3, min=100, max=400)
+# Repeat this for 5 zip codes.
+house_prices <- t(replicate(5, runif(3, min=100, max=400) ))
+# Find the average house price in each zip code
+avg_house_prices <- rowMeans(house_prices)
+# See what you got
+hist(avg_house_prices)
+# Increase n and z and try again!
+    \end{lstlisting}}		
+	
+	\begin{frame}[label=lists]{Central Limit Theorem}
+		\framesubtitle{R Exercise} 
+		 $X$ : The price of a house. Assume $X$ is uniform in $[100,400]$ (\$K).
+		 
+		 $Y$ : Average house price in a zip code
+		 
+		 We will simulate $z$ number of zip codes, each containing $n$ houses.		 	
+		
+		
+		\housePrices
+   			
+	\end{frame}	
+
+
+
+
+
+
 
 
 
