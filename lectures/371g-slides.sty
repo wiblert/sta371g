@@ -10,3 +10,11 @@
 \usepackage{url}
 \usepackage{listings}
 \usetheme[faculty=ped,logo=../mccombs.png]{fibeamer}
+
+\newcommand{\fullpagepicture}[1]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[at=(current page.center)] {
+      \includegraphics[width=\paperwidth]{#1}
+    };
+  \end{tikzpicture}
+}
