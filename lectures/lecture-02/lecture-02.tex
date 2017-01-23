@@ -74,11 +74,21 @@
 
    \begin{darkframes}
   
+    \begin{frame}{Reading assignments}
+      \begin{itemize}[<+->]
+        \item Sign up at \url{perusall.com}
+        \item Reading assignments help you build (incomplete) mental structures that we can build on in class
+        \item Your assignment is to read and annotate: ask a question, answer a classmate's question, make an observation, try to explain something better than the text does
+        \item Make at least three high-quality annotations per document to get full credit (examples on Canvas)
+        \item First assignment is due \textbf{January 31 at 11:55 PM}
+      \end{itemize}
+    \end{frame}
+
 
     \begin{frame}[label=lists]{Probability Theory}
       \framesubtitle{The Concept of Probability}
       
-      What is common among the following? \pause
+      What do each of these have in common? \pause
       
       \begin{itemize}
       	\item Outcome of rolling a die
@@ -218,9 +228,10 @@
 		\framesubtitle{Discrete Random Variables} 
 	
 		\begin{exampleblock}{Example}
-			$X$: The outcome when you roll $n$-sided fair die. \pause
+			$X$: The outcome when you roll an $n$-sided fair die. \pause
 			
-			Since this is a fair die, the corresponding probability mass function:
+      \smallskip
+			Since this is a fair die, the corresponding probability mass function is
 			
 			$$ f(x) = 
 			\begin{cases}
@@ -232,11 +243,11 @@
         
        
         \begin{itemize}
-        	\item $f(2)=P(X=2)$, which is the probability of observing a ``2.'' This interpretation will not hold for continuous random variables. \pause
+        	\item $f(2)=P(X=2)$, which is the probability of observing a ``2.'' \pause
         	
-        	\item Sum of probabilities is always 1. ($n \times \frac{1}{n}$).  \pause
+        	\item The probabilities always sum to 1. ($n \times \frac{1}{n} = 1$).  \pause
     		
-    		\item This is an example of \alert{Discrete Uniform Distribution}.    	
+      		\item This is an example of a \alert{Discrete Uniform Distribution}.    	
 	        	
         \end{itemize} 
 	\end{frame}
@@ -251,9 +262,9 @@
 		\framesubtitle{Continous Random Variables} 
 	
 		\begin{exampleblock}{Example}
-		$Y:$ Lifetime of your MacBook (in years) \newline \pause
+		$Y:$ Lifetime of your MacBook (in years) \pause
 		
-		Let's assume $Y$ has a \alert{Continuous Uniform Distribution} with a maximum of 20 years. Its probability distribution is then given by the following probability density function: \newline  \pause
+		Let's assume $Y$ has a \alert{Continuous Uniform Distribution} with a maximum of 20 years. Its probability distribution is then given by the probability density function \pause
 		
 		$$ f(y) = 
 			\begin{cases}
@@ -282,10 +293,7 @@
       \end{alertblock}  \pause
        %\quad \newline
       
-      For this reason, for continuous random variables we ask questions like ``$P(a \leq Y \leq b)=?$'' \newline \pause
-      
-      And we take integrals to find such probabilities.
-			
+      For this reason, for continuous random variables we ask questions like ``$P(a \leq Y \leq b)=?$'' \newline \pause			
 	\end{frame}
 
 
@@ -293,7 +301,7 @@
 		\framesubtitle{Continous Random Variables} 
 
 		\begin{exampleblock}{Example}
-		$Y:$ Lifetime of your MacBook (in years) \newline \pause
+		$Y:$ Lifetime of your MacBook (in years) \pause
 		
 		$$ f(y) = 
 			\begin{cases}
@@ -301,11 +309,9 @@
 				0 \qquad   \text{otherwise.}
 			\end{cases}
 		$$  \pause
-		
-		What is $P(5<Y<7)=?$   \pause
-		
+				
 		$$
-			P(5<Y<7) = \int_5^7 \frac{1}{20} dy = \frac{y}{20} |_5^7 = \frac{7}{20} - \frac{5}{20} =  \frac{1}{10}
+			P(5<Y<7) = \pause \int_5^7 \frac{1}{20} dy = \frac{y}{20} |_5^7 = \frac{7}{20} - \frac{5}{20} =  \frac{1}{10}
 		$$  \pause
 		
 		
@@ -338,21 +344,26 @@
 		\begin{definition}
 			\alert{Mean} or \alert{Expected Value} of a random variable $X$ is a measure of the center of its probability distribution. It is a weighted average of all possible values $X$ can take, where the weights are the corresponding probabilities. 
 		\end{definition} \pause
-		
-		\begin{columns}[onlytextwidth]
-        \column{.5\textwidth}
-        	Discrete random variable $X$
-        	$$
-				\mu_X = E[X] = \sum_x x f(x)	        	
-        	$$  
-        	
-        \column{.5\textwidth} 
-        	Continuous random variable $Y$
-        	$$
-				\mu_Y = E[Y] = \int_y y f(y) dy	        	
-        	$$
-        	        
-        \end{columns}
+	
+
+		\begin{columns}[T,onlytextwidth]
+      \column{.5\textwidth}
+        \begin{center}
+      	Discrete random variable $X$
+      	\begin{align*}
+          \mu_X = E[X] &= \sum_x x f(x) \\ &= \sum_x x P(X=x)
+        \end{align*}
+        \end{center}
+      	
+      \column{.5\textwidth} 
+        \begin{center}
+      	Continuous random variable $Y$
+      	$$
+			\mu_Y = E[Y] = \int_y y f(y) \, dy	        	
+      	$$
+        \end{center}
+      	        
+    \end{columns}
 
 
 				
@@ -366,7 +377,7 @@
 		%\framesubtitle{Mean (Expected Value) of a Random Variable} 
 		
 		\begin{definition}
-			\alert{Variance} of a random variable $X$ is a measure of the dispersion, or variability in its distribution. \alert{Standard Deviation} of $X$ is the square root of its variance.
+			\alert{Variance} of a random variable $X$ is a measure of the spread, or variability in its distribution. \alert{Standard Deviation} of $X$ is the square root of its variance.
 		\end{definition}  \pause
 		
         	Discrete random variable $X$
@@ -411,19 +422,14 @@
 	
 	\defverbatim[colored]\rollRie{
       \begin{lstlisting}[language=R,tabsize=2]
-# Generate a random number in [0,1]
-runif(1) 
-# Generate a random number in [1,7]
-runif(1, min=1, max=7)
-# Floor it down to simulate a die
-floor(runif(1, min=1, max=7))
-# Simulate 3 dice
-floor(runif(3, min=1, max=7))
+# Simulate rolling a die 1 time
+sample(c(1, 2, 3, 4, 5, 6), 1, replace=T)
+# Simulate rolling a die 4 times
+sample(c(1, 2, 3, 4, 5, 6), 4, replace=T)
 # Take the average	
-mean(floor(runif(3, min=1, max=7)))
+mean(sample(c(1, 2, 3, 4, 5, 6), 4, replace=T))
 # Let's increase the number of dice
-mean(floor(runif(10, min=1, max=7)))
-
+mean(sample(c(1, 2, 3, 4, 5, 6), 10, replace=T))
     \end{lstlisting}}	
 	
 	\begin{frame}[label=lists]{Law of Large Numbers}
@@ -466,12 +472,12 @@ mean(floor(runif(10, min=1, max=7)))
 		\end{definition}		 \pause
 		
 		\begin{exampleblock}{Example}
+      Exam grades tend to be normally distributed becuase they are the combination of independent random variables:
 			$$
-				\text{a student's exam grade} = \text{preparedness} + \text{focus} + \text{IQ} + \ldots 
+				\text{a student's exam grade} = \text{preparedness} + \text{focus} + \text{learning} + \ldots 
 			$$
 		\end{exampleblock} \pause
 		
-		Distribution of the exam grades then tend to be normal...
 
    			
 	\end{frame}	
@@ -484,24 +490,22 @@ mean(floor(runif(10, min=1, max=7)))
 	
 	\defverbatim[colored]\housePrices{
       \begin{lstlisting}[language=R,tabsize=2]
-# Simulating a zip code with 3 houses
+# Simulating a zip code with n=3 houses
 runif(3, min=100, max=400)
-# Repeat this for 5 zip codes.
-house_prices <- t(replicate(5, runif(3, min=100, max=400) ))
+# Repeat this for k=5 zip codes.
+house_prices <- replicate(5, runif(3, min=100, max=400))
 # Find the average house price in each zip code
-avg_house_prices <- rowMeans(house_prices)
-# See what you got
+avg_house_prices <- colMeans(house_prices)
+# Make a histogram of the average house price in your zip codes
 hist(avg_house_prices)
-# Increase n and z and try again!
+# Increase n and k and try again!
     \end{lstlisting}}		
 	
 	\begin{frame}[label=lists]{Central Limit Theorem}
 		\framesubtitle{R Exercise} 
-		 $X$ : The price of a house. Assume $X$ is uniform in $[100,400]$ (\$K).  \pause
+		 $X$ : Average house price in a particular zip code. Assume house prices in each zip code are uniformly distributed in $[100,400]$ (\$K)   \pause
 		 
-		 $Y$ : Average house price in a zip code  \pause
-		 
-		 We will simulate $z$ number of zip codes, each containing $n$ houses.	\pause 	
+		 We will simulate $k$ different zip codes, each containing $n$ houses.	\pause 
 		
 		
 		\housePrices
