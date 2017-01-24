@@ -371,9 +371,25 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
 	\end{frame}
 	
 	
-	\begin{frame}[label=lists]{Confidence Interval 2}
-		Content Here
-	\end{frame} 
+    	\defverbatim[colored]\confInt{
+      \begin{lstlisting}[language=R,tabsize=2]
+# Calculate 95% confidence interval (default)
+avg_price_ci_95 <- t.test(sample_house_prices)
+# Calculate 99% confidence interval
+avg_price_ci_99 <- t.test(sample_house_prices, conf.level = 0.99)
+# Display results
+cat("95% confidence interval is:", avg_price_ci_95$conf.int)
+cat("99% confidence interval is:", avg_price_ci_99$conf.int)
+
+    \end{lstlisting}}	
+    
+    \begin{frame}[label=lists]{Confidence Interval}
+    Add the following to your R script
+    \confInt
+    
+    Enter your results on Learning Catalytics.
+    
+    \end{frame}
 	
 
 \end{darkframes}
