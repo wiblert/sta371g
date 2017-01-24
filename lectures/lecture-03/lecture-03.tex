@@ -76,7 +76,7 @@
   
 
 	\begin{frame}[label=lists]{Sample vs Population}
-    	Find out the average house price in Austin. 
+    	Find out the average house price in Austin. \pause
     	
     	How would you do that? 
     	% Assume that no one has done this before, so it is your duty.
@@ -86,12 +86,12 @@
 			\scalebox{.4}{ \includegraphics{austin.jpg} }
 			\setlength\fboxsep{0pt}
 			\setlength\fboxrule{0.5pt}
-		\end{figure}  
+		\end{figure}  \pause
 			
 		
-		Look at each house price? 
+		Look at each house price?  \pause
 		
-		360,000 houses in Austin!  
+		360,000 houses in Austin!   \pause
 		
 		Can we do something smarter? 
 		
@@ -102,11 +102,11 @@
     
     
     \begin{frame}[label=lists]{Sample vs Population}
-    	A smarter approach:
+    	A smarter approach: \pause
    		\begin{itemize}
-   			\item Pick $n$ houses randomly (e.g. $n=100$)
-   			\item Take the average of the prices of these $n$ houses
-   			\item Hope that your estimate is close to the true price average.
+   			\item Pick $n$ houses randomly (e.g. $n=100$) \pause
+   			\item Take the average of the prices of these $n$ houses \pause
+   			\item Hope that your estimate is close to the true price average. \pause
    		\end{itemize}
    		
    		% Emphasize that the sample should be selected randomly to avoid any biases.
@@ -138,7 +138,7 @@
           \bottomrule
         \end{tabularx}}
         
-      \end{table} 
+      \end{table} \pause
       \quad \newline    		
    		
    		Estimating a \alert{population parameter} (population mean) based on a \alert{sample statistic} (sample mean).
@@ -232,18 +232,14 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
         
       \end{table}    	
       \quad \newline
-      What would you expect if you had 10\,000 houses in your survey?
+      %What would you expect if you had 10\,000 houses in your survey?
     	
     	
 		
     \end{frame}
     
        
-    \begin{frame}[label=lists]{Sampling Distribution}
-		Let's compare sample mean of 5 houses vs 15 houses. \newline
-		
-		What do you expect to see?
-	\end{frame}
+
 	
 	
 	\begin{frame}[label=lists]{Sampling Distribution}
@@ -286,7 +282,11 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
     \end{frame}
     
     
-	
+	\begin{frame}[label=lists]{Sampling Distribution}
+		Let's compare sample mean of 5 houses vs 15 houses. \newline
+		
+		What do you expect to see?
+	\end{frame}
 	
 
     
@@ -302,17 +302,17 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
     
     
     \begin{frame}[label=lists]{Hypothesis Testing}
-    Hypothesis: The average house price in Austin is \$1M.
+    Hypothesis: Average house price in Austin is \$1M. \pause
     
-    Your survey on 25 houses: Average price is \$$305K$. \newline
+    Your survey on 25 houses: Average house price is \$$305K$. \newline \pause
     
-    Questions, questions...
+    Questions, questions... \pause
     \begin{itemize}
-   \item Would you reject the hypothesis? Why?
+   \item Would you reject the hypothesis? Why? \pause
     
-   \item Is it possible that, out of bad luck, you picked the cheapest houses?
+   \item Is it possible that, out of bad luck, you picked the cheapest houses? \pause
     
-   \item Would you be more comfortable with your conclusion if you had 1000 houses in your survey?
+   \item Would you be more comfortable with your conclusion if you had 1000 houses in your survey? \pause
     
    \item When should you reject the hypothesis? When not?
     
@@ -323,19 +323,19 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
 	
 	
 	\begin{frame}[label=lists]{P-Value}
-		Your sample mean: \$305K. 	\newline
+		Your sample mean: \$305K. 	\newline \pause
 	
 		$H_0:$ $\mu=\$1M$	(Null hypothesis)
 		
-		$H_1:$ $\mu<\$1M$	(Alternative hypothesis) \newline
+		$H_1:$ $\mu<\$1M$	(Alternative hypothesis) \newline \pause
 		
 		
 		
-		The \alert{$P$-value} is ``the probability of observing such an extreme (\$305K or less) sample statistic given the null hypothesis is true.'' \newline
+		The \alert{$P$-value} is ``the probability of observing such an extreme (\$305K or less) sample statistic given the null hypothesis is true.'' \newline \pause
 		
 		\begin{itemize}
-		\item $P$-value  $\leq \alpha$, reject the null hypothesis
-		\item $P$-value  $> \alpha$, reject the null hypothesis
+		\item $P$-value  $\leq \alpha$, reject the null hypothesis \pause
+		\item $P$-value  $> \alpha$, reject the null hypothesis \pause
 		
 		\end{itemize}		
 		
@@ -349,27 +349,47 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
 	
 	
 	\begin{frame}[label=lists]{P-Value}
-		If the null hypothesis were true...
+		If the null hypothesis were true... \pause
 		\begin{figure} 
 				\centering
 				\scalebox{.4}{ \includegraphics{pval2.jpg} }
 				\setlength\fboxsep{0pt}
 				\setlength\fboxrule{0.2pt} 
-		\end{figure} 			
-		P-value is smaller than $10^{-100}$, while $\alpha=0.05$. 
+		\end{figure} 	\pause		
+		P-value is smaller than $10^{-100}$, while $\alpha=0.05$.  \pause
 		
 		Rather than thinking you are cursed, you simply reject the hypothesis!
 	\end{frame}
 	
 	
+	\begin{frame}[label=lists]{P-Value}
+			
+			Learning Catalytics... \newline \pause
+			
+			Your sample mean = \$305K. \newline \pause
+			
+			$H_0$: Average house price is \$390K.
+			
+			Would you reject the hypothesis? 
+			
+			P-value = 0.01, $\alpha$=0.05 \newline \pause 
+			
+			$H_0$: Average house price is \$320K.
+			
+			Would you reject the hypothesis? 
+			
+			P-value = 0.34, $\alpha$=0.01 \pause 
+			
+		
+	\end{frame}
 
 	
 
 	
 	\begin{frame}[label=lists]{Confidence Interval}
-		Sample mean is not equal to the population mean, but ``close.'' 
+		Sample mean is not equal to the population mean, but ``close.'' \pause
 				
-		\alert{Confidence interval} is a range that includes the population mean with a certain level of ``confidence.''
+		\alert{Confidence interval} is a range that includes the population mean with a certain level of ``confidence.'' \pause
 		
 		\begin{figure} 
 				\centering
