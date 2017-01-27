@@ -166,6 +166,7 @@
       model <- lm(num.drinks ~ age)
       abline(model, col='red', lwd=4)
       @
+      \lc
     \end{frame}
 
     \begin{frame}{What is linear regression doing?}
