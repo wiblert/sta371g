@@ -73,40 +73,35 @@
   %%%%%%% Slides start here %%%%%%%
 
    \begin{darkframes}
-  
 
-	\begin{frame}[label=lists]{Sample vs Population}
-    	Find out the average house price in Austin. \pause
+	\begin{frame}[label=lists]
+    \begin{center}
+    	How would you figure out the average house price in Austin?
     	
-    	How would you do that? 
     	% Assume that no one has done this before, so it is your duty.
     	
-		\begin{figure} 
-			\centering
-			\scalebox{.4}{ \includegraphics{austin.jpg} }
-			\setlength\fboxsep{0pt}
-			\setlength\fboxrule{0.5pt}
-		\end{figure}  \pause
-			
-		
-		Look at each house price?  \pause
-		
-		360,000 houses in Austin!   \pause
-		
-		Can we do something smarter? 
-		
-     
-      
+  		\begin{figure} 
+  			\centering
+  			\scalebox{.4}{ \includegraphics{austin.jpg} }
+  			\setlength\fboxsep{0pt}
+  			\setlength\fboxrule{0.5pt}
+  		\end{figure}  \pause
+  			
+  		
+  		Look up each house price?  \pause
+  		
+  		There are 360,000 houses in Austin --- is there a better way?
+    \end{center}
     \end{frame}    
     
     
     
     \begin{frame}[label=lists]{Sample vs Population}
-    	A smarter approach: \pause
+    	A faster approach: \pause
    		\begin{itemize}
    			\item Pick $n$ houses randomly (e.g. $n=100$) \pause
    			\item Take the average of the prices of these $n$ houses \pause
-   			\item Hope that your estimate is close to the true price average. \pause
+   			\item Hope that our estimate is close to the true mean price \pause
    		\end{itemize}
    		
    		% Emphasize that the sample should be selected randomly to avoid any biases.
@@ -132,16 +127,16 @@
         \begin{tabularx}{\textwidth}{Xcc}
           \textbf{} & \textbf{Population} & \textbf{Sample} \\
           \toprule
-          Members       		& all house prices  & prices you picked  \\
-          Average               & population mean   & sample mean  \\
-          Variance          & population variance   & sample variance \\
+          Members       		 & all houses  & houses you selected  \\
+          Mean               & population mean ($\mu$)    & sample mean ($\hat\mu$) \\
+          SD & population SD ($\sigma$)   & sample SD ($\hat\sigma$) \\
           \bottomrule
         \end{tabularx}}
         
       \end{table} \pause
       \quad \newline    		
    		
-   		Estimating a \alert{population parameter} (population mean) based on a \alert{sample statistic} (sample mean).
+   		We will estimate a \alert{population parameter} (population mean) based on a \alert{sample statistic} (sample mean).
 		
     	%We could also estimate other population parameters, such as variance using the sample variance.
 		
@@ -152,12 +147,11 @@
     
     \begin{columns}[onlytextwidth]
         \column{.45\textwidth}
-        	Zillow.com, ``Austin, TX.'' 
         	\begin{itemize}
-   				\item Click ``More Map''
-   				\item Select 15 houses, note their prices in an R script. 
-   				\item Do not discard any price, use the first 15
-   				\item Try to represent different regions
+          \item Go to \url{zillow.com} and search for Austin, TX.
+   				\item Click ``More Map.''
+   				\item Select 15 houses (try to get houses from all over town in a representative way), noting their prices in an R script. 
+   				\item Do not discard any price, use the first 15 you find.
 			\end{itemize}
         
          
@@ -179,34 +173,26 @@
     
     	\defverbatim[colored]\sampleZillow{
       \begin{lstlisting}[language=R,tabsize=2]
-# Create a vector of house prices (You should have 15 price data)
-sample_house_prices <- c(327000,276000,513000)
+# Create a vector of house prices (you should have 15 prices)
+sample_house_prices <- c(327000, 276000, 513000)
 # Calculate sample statistics
 sample_mean <- mean(sample_house_prices)
 sample_variance <- var(sample_house_prices)
 sample_standard_deviation <- sd(sample_house_prices)
 # Sample mean of first 5 houses
 sample_mean_5 <- mean(sample_house_prices[1:5])
-# Print them to console
-cat("Sample Mean", sample_mean)
-cat("Sample Variance", sample_variance)
-cat("Sample Standard Deviation", sample_standard_deviation)
-cat("Sample Mean of first 5 houses",sample_mean_5)
-
     \end{lstlisting}}	
     
     \begin{frame}[label=lists]{Collecting a sample}
-    Your R script should look like this
-    \sampleZillow
-    
+      \sampleZillow    
     \end{frame}
 
 
-    \begin{frame}[label=lists]{Sampling Distribution} 
-		On Learning Catalytics, enter your results. \newline
+  %   \begin{frame}[label=lists]{Sampling Distribution} 
+		% On Learning Catalytics, enter your results. \newline
 		
-		And here is what they look like... % Use sample mean with 15 houses.
-    \end{frame}
+		% And here is what they look like... % Use sample mean with 15 houses.
+  %   \end{frame}
 
 
 
@@ -222,7 +208,7 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
 		\begin{table}[!b]
         {\carlitoTLF % Use monospaced lining figures
         \begin{tabularx}{\textwidth}{Xcc}
-          \textbf{Statistic} & \textbf{Population} & \textbf{Sample Mean} \\
+          \textbf{Statistic} & \textbf{Population} & \textbf{Sampling Distribution} \\
           \toprule
           Mean       		& $\mu$  & $\mu$  \\
           %Variance          & $\sigma^2$     & $\sigma^2/n$  \\
@@ -265,12 +251,12 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
     
     \begin{frame}[label=lists]{Sampling Distribution}
     
-    Assume $\mu=$\$300K, $\sigma=$\$60K. \newline
+    Assume $\mu=\$300K$, $\sigma=\$60K$. \newline
     
    	\begin{table}[!b]
         {\carlitoTLF % Use monospaced lining figures
         \begin{tabularx}{\textwidth}{Xccc}
-          \textbf{} &  $n$ & $\sigma/\sqrt{n}$  & 3 std. dev. range (99.7\%) \\
+          \textbf{} &  $n$ & $\sigma/\sqrt{n}$  & $\pm 3\,\text{SD}$ range (99.7\%) \\
           \toprule
           Survey 1     & 25   &  \$12K	&\$264K ............. \$336K   \\
           Survey 2     & 100  &  \$6K	&\$282K ....... \$318K   \\
@@ -306,36 +292,30 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
     
     Your survey on 25 houses: Average house price is \$$305K$. \newline \pause
     
-    Questions, questions... \pause
     \begin{itemize}
-   \item Would you reject the hypothesis? Why? \pause
-    
-   \item Is it possible that, out of bad luck, you picked the cheapest houses? \pause
-    
-   \item Would you be more comfortable with your conclusion if you had 1000 houses in your survey? \pause
-    
-   \item When should you reject the hypothesis? When not?
-    
+      \item Would you reject the hypothesis? Why? \pause
+      \item Is it possible that, out of bad luck, you picked the cheapest houses? \pause
+      \item Would you be more comfortable with your conclusion if you had 1000 houses in your survey? \pause
+      \item When should you reject the hypothesis? When not?
    \end{itemize}
 
 
 	\end{frame}
 	
 	
-	\begin{frame}[label=lists]{P-Value}
-		Your sample mean: \$305K. 	\newline \pause
+	\begin{frame}[label=lists]{$p$-values}
+		Your sample mean: $\hat\mu=\$305K$  \pause
 	
-		$H_0:$ $\mu=\$1M$	(Null hypothesis)
+    \begin{itemize}[<+->]
+		  \item $H_0: \mu=\$1M$	(null hypothesis)
+		  \item $H_1: \mu<\$1M$	(alternative hypothesis)
+    \end{itemize}
 		
-		$H_1:$ $\mu<\$1M$	(Alternative hypothesis) \newline \pause
-		
-		
-		
-		The \alert{$P$-value} is ``the probability of observing such an extreme (\$305K or less) sample statistic given the null hypothesis is true.'' \newline \pause
+		The \alert{$p$-value} is ``the probability of observing such an extreme ($\leq \$305K$) sample statistic if in fact the null hypothesis is true.'' \pause
 		
 		\begin{itemize}
-		\item $P$-value  $\leq \alpha$, reject the null hypothesis \pause
-		\item $P$-value  $> \alpha$, do not reject the null hypothesis \pause
+		\item If $p < \alpha$, reject the null hypothesis \pause
+		\item If $p \geq \alpha$, do not reject the null hypothesis \pause
 		
 		\end{itemize}		
 		
@@ -346,51 +326,69 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
 		% Emphasize that the interpretation of p value is always the same.
 
 	\end{frame}
+
+  \begin{frame}
+    \fullpagepicture{in-a-world}
+  \end{frame}
 	
 	
-	\begin{frame}[label=lists]{P-Value}
-		If the null hypothesis were true... \pause
+	\begin{frame}[label=lists]{Let's assume we are in a world where $H_0$ is true...}
+    \pause
 		\begin{figure} 
 				\centering
 				\scalebox{.4}{ \includegraphics{pval2.jpg} }
 				\setlength\fboxsep{0pt}
 				\setlength\fboxrule{0.2pt} 
-		\end{figure} 	\pause		
-		P-value is smaller than $10^{-100}$, while $\alpha=0.05$.  \pause
+		\end{figure}
+    \pause
+
+    \begin{center}
+      What is the probability of a sample where $\hat\mu\leq\$305K$? \pause
+  		
+      This is $p$, the area to the left of $\$305K$. $p<10^{-100}$!  \pause
 		
-		Rather than thinking you are cursed, you simply reject the hypothesis!
+		  Since $p<\alpha=0.05$, reject the null hypothesis!
+    \end{center}
 	\end{frame}
 	
 	
-	\begin{frame}[label=lists]{P-Value}
+	% \begin{frame}[label=lists]{P-Value}
 			
-			Learning Catalytics... \newline \pause
+	% 		Learning Catalytics... \newline \pause
 			
-			Your sample mean = \$305K. \newline \pause
+	% 		Your sample mean = \$305K. \newline \pause
 			
-			$H_0$: Average house price is \$390K.
+	% 		$H_0$: Average house price is \$390K.
 			
-			Would you reject the hypothesis? 
+	% 		Would you reject the hypothesis? 
 			
-			P-value = 0.01, $\alpha$=0.05 \newline \pause 
+	% 		P-value = 0.01, $\alpha$=0.05 \newline \pause 
 			
-			$H_0$: Average house price is \$320K.
+	% 		$H_0$: Average house price is \$320K.
 			
-			Would you reject the hypothesis? 
+	% 		Would you reject the hypothesis? 
 			
-			P-value = 0.34, $\alpha$=0.01 \pause 
+	% 		P-value = 0.34, $\alpha$=0.01 \pause 
 			
 		
-	\end{frame}
+	% \end{frame}
 
 	
 
 	
-	\begin{frame}[label=lists]{Confidence Interval}
-		Sample mean is not equal to the population mean, but ``close.'' \pause
+	\begin{frame}[label=lists]{Confidence Intervals}
+    \begin{center}
+		The sample mean is probably not exactly equal to the population mean, but it's almost certainly ``close.'' \pause
+
+    \bigskip
 				
-		\alert{Confidence interval} is a range that includes the population mean with a certain level of ``confidence.'' \pause
-		
+		A \alert{confidence interval} is a range that includes the population mean with a certain level of ``confidence.'' \pause
+    \end{center}
+  \end{frame}
+
+  \begin{frame}{Confidence Intervals}
+		Each sample will have a different 95\% confidence interval, and 95\% of such intervals will contain the population mean:
+
 		\begin{figure} 
 				\centering
 				\scalebox{.6}{ \includegraphics{confint.jpg} }
@@ -404,21 +402,13 @@ cat("Sample Mean of first 5 houses",sample_mean_5)
     	\defverbatim[colored]\confInt{
       \begin{lstlisting}[language=R,tabsize=2]
 # Calculate 95% confidence interval (default)
-avg_price_ci_95 <- t.test(sample_house_prices)
+avg_price_ci_95 <- t.test(sample_house_prices, conf.level=0.95)
 # Calculate 99% confidence interval
-avg_price_ci_99 <- t.test(sample_house_prices, conf.level = 0.99)
-# Display results
-cat("95% confidence interval is:", avg_price_ci_95$conf.int)
-cat("99% confidence interval is:", avg_price_ci_99$conf.int)
-
+avg_price_ci_99 <- t.test(sample_house_prices, conf.level=0.99)
     \end{lstlisting}}	
     
     \begin{frame}[label=lists]{Confidence Interval}
-    Add the following to your R script
-    \confInt
-    
-    Enter your results on Learning Catalytics.
-    
+      \confInt
     \end{frame}
 	
 
