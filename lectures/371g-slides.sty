@@ -9,7 +9,10 @@
 \usepackage{amsmath,amssymb}
 \usepackage{url}
 \usepackage{listings}
+\usepackage{pdfcomment}
 \usetheme[faculty=ped,logo=../mccombs.png]{fibeamer}
+
+\renewcommand{\note}[1]{\marginnote{\pdfcomment[icon=note]{#1}}}
 
 \newcommand{\fullpagepicture}[1]{
   \begin{tikzpicture}[remember picture,overlay]
@@ -18,3 +21,5 @@
     };
   \end{tikzpicture}
 }
+
+\newcommand{\lc}{\note{>>> LC question after this slide <<<}}
