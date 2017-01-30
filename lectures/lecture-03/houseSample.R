@@ -1,9 +1,18 @@
-sample_house_prices <- c(327000,
-                         276000,
-                         513000, 
-                         216000, 
-                         127000,
-                         413000)
+sample_house_prices <- c(329000,
+                         589000,
+                         370000,
+                         420000,
+                         220000,
+                         1500000,
+                         370000,
+                         589000,
+                         235000,
+                         470000,
+                         89000,
+                         150000,
+                         950000,
+                         154000,
+                         225000)
 sample_mean <- mean(sample_house_prices)
 sample_variance <- var(sample_house_prices)
 sample_standard_deviation <- sd(sample_house_prices)
