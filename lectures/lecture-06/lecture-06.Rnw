@@ -16,7 +16,7 @@
   @
   <<include=F>>=
   library(readr)
-  stock_market_returns <- read_csv("../../data/stock-market-returns.csv")
+  stock_market_returns <- read_csv("../../data/stock_market_returns.csv")
   salaries <- read_csv("../../data/social-worker-salaries.csv")
   @
 
@@ -40,6 +40,7 @@
         \item $\beta>1$ is \textbf{more} volatile than the market as a whole.
         \item $\beta<1$ is \textbf{less} volatile than the market as a whole.
       \end{itemize}
+      \pause
       $\beta$ is just the slope of the regression line (i.e. $\hat\beta_1$) when we regress the asset's weekly returns against the weekly returns of a market index. 
     \end{frame}
 
